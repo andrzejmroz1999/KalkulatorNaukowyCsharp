@@ -231,15 +231,15 @@ namespace KalkulatorNaukowyCsharp
 
         }
         private void potega_TextChanged(object sender, EventArgs e)
-        {
+        {          
             int i = 0;
             double val = double.Parse(Display.Text);
+            Operations.Text = val + " ^ " + potega.Text;
             if (potega.Text != "" && int.TryParse(potega.Text, out i))
             {
                 val = Math.Pow(val, int.Parse(potega.Text));
                 Display.Text = val.ToString();
-            }
-            Operations.Text = val + " ^ " + potega.Text;
+            }           
             Operations.Location = new Point(Display.Right - Operations.Width + 10);
 
         }
